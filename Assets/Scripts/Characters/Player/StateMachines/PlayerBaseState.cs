@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class PlayerBaseState : IState
 {
     protected PlayerStateMachine stateMachine;
     protected readonly PlayerSO playerData;
-    protected readonly PlayerInputActions.PlayerActions playerActions;
-    protected Transform playerTransform;
 
 
     public PlayerBaseState(PlayerStateMachine playerStateMachine)
     {
         stateMachine = playerStateMachine;
         playerData = stateMachine.Player.PlayerData;
-        playerActions = stateMachine.Player.Input.PlayerActions;
-        playerTransform = stateMachine.Player.transform;
     }
     public virtual void Enter()
     {
@@ -46,19 +43,32 @@ public class PlayerBaseState : IState
 
     protected virtual void AddInputActionsCallbacks()
     {
-
+        PlayerInput input = stateMachine.Player.Input;
+        input.PlayerActions.Movement.canceled += OnMovementCanceled;
+        input.PlayerActions.Run.started += OnRunStarted;
     }
 
     protected virtual void RemoveInputActionsCallbacks()
+    {
+        PlayerInput input = stateMachine.Player.Input;
+        input.PlayerActions.Movement.canceled -= OnMovementCanceled;
+        input.PlayerActions.Run.started -= OnRunStarted;
+    }
+
+    protected virtual void OnRunStarted(InputAction.CallbackContext context)
+    {
+
+    }
+    protected virtual void OnMovementCanceled(InputAction.CallbackContext context)
     {
 
     }
 
     private void ReadMovementInput()
     {
-        stateMachine.MovementInput = playerActions.Movement.ReadValue<Vector2>();
+        PlayerInput input = stateMachine.Player.Input;
+        stateMachine.MovementInput = input.PlayerActions.Movement.ReadValue<Vector2>();
     }
-
     private void Move()
     {
         Vector3 movementDirection = GetMovementDirection();
@@ -80,17 +90,18 @@ public class PlayerBaseState : IState
         return forward* stateMachine.MovementInput.y + right* stateMachine.MovementInput.x;
     }
 
-    private void Rotate(Vector3 direction)
+    private void Move(Vector3 direction)
     {
         float movementSpeed = GetMovementSpeed();
         stateMachine.Player.Controller.Move(
             (direction * movementSpeed ) * Time.deltaTime
             );
     }
-    private void Move(Vector3 direction)
+    private void Rotate(Vector3 direction)
     {
-        if( direction == Vector3.zero )
+        if( direction != Vector3.zero )
         {
+            Transform playerTransform = stateMachine.Player.transform;
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, targetRotation, stateMachine.RotationDamping * Time.deltaTime);
         }
