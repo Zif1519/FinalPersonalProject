@@ -16,8 +16,8 @@ TagManager:
   - 
   - NotMainCamera
   - NotSubCamera
+  - NotSkyboxCamera
   - NotAllCamera
-  - 
   - 
   - 
   - 

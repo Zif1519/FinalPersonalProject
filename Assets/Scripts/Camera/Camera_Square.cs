@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSkybox : MonoBehaviour
+public class Camera_Square : MonoBehaviour
 {
-    public Transform smallBall;
     public Transform mainCamera;
-    public Transform player;
+    public Transform smallBall;
 
     private void Update()
     {
-        transform.localPosition = (player.position - smallBall.position)/30f;
         transform.rotation = mainCamera.rotation;
+        transform.position = mainCamera.forward * -50f;
     }
 }
