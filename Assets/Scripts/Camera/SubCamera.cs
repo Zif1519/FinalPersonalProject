@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class SubCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Transform mainCamera;
+    public Transform smallBall;
+    public Transform BigBall;
+    
+    void LateUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position = (mainCamera.position-smallBall.position)*30f ;
+        transform.rotation = mainCamera.rotation;
     }
 }
