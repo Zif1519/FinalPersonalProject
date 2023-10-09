@@ -111,7 +111,8 @@ public class PlayerBaseState : IState
     {
         float movementSpeed = GetMovementSpeed();
         stateMachine.Player.Controller.Move(
-            (direction * movementSpeed ) * Time.deltaTime
+            ((direction * movementSpeed )
+            + stateMachine.Player.ForceReceiver.Movement)* Time.deltaTime
             );
     }
     private void Rotate(Vector3 direction)
