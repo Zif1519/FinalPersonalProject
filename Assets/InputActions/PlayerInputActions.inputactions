@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shot",
+                    "name": "CursorLock",
                     "type": "Button",
                     "id": "02b1d4a5-13ad-4277-9bdd-710c4ed1ca43",
                     "expectedControlType": "Button",
@@ -203,7 +203,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shot",
+                    "action": "CursorLock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -254,7 +254,7 @@
                 {
                     "name": "",
                     "id": "01736d64-5b6e-4856-bbdd-f7824666dba2",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

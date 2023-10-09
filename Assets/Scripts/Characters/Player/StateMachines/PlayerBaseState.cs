@@ -1,19 +1,20 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class PlayerBaseState : IState
 {
     protected PlayerStateMachine stateMachine;
     protected readonly PlayerSO playerData;
-
+    protected CinemachinePOV virtualCameraPOV;
 
     public PlayerBaseState(PlayerStateMachine playerStateMachine)
     {
         stateMachine = playerStateMachine;
         playerData = stateMachine.Player.PlayerData;
+        virtualCameraPOV = playerStateMachine.Player.VirtualCamera.GetCinemachineComponent<CinemachinePOV>();
     }
     public virtual void Enter()
     {
@@ -28,6 +29,7 @@ public class PlayerBaseState : IState
     public virtual void HandleInput()
     {
         ReadMovementInput();
+        ReadCursorLockInput();
     }
 
     public virtual void PhysicsUpdate()
@@ -69,6 +71,21 @@ public class PlayerBaseState : IState
         PlayerInput input = stateMachine.Player.Input;
         stateMachine.MovementInput = input.PlayerActions.Movement.ReadValue<Vector2>();
     }
+    private void ReadCursorLockInput()
+    {
+        if (Cursor.lockState != CursorLockMode.Locked && stateMachine.Player.Input.PlayerActions.CursorLock.IsPressed())
+        { 
+            Cursor.lockState = CursorLockMode.Locked;
+            virtualCameraPOV.m_VerticalAxis.m_MaxSpeed = 5f;
+            virtualCameraPOV.m_HorizontalAxis.m_MaxSpeed = 5f;
+        }
+        if (Cursor.lockState == CursorLockMode.Locked && !stateMachine.Player.Input.PlayerActions.CursorLock.IsPressed())
+        {
+            Cursor.lockState = CursorLockMode.None;
+            virtualCameraPOV.m_VerticalAxis.m_MaxSpeed = 0f;
+            virtualCameraPOV.m_HorizontalAxis.m_MaxSpeed = 0f;
+        }
+    }
     private void Move()
     {
         Vector3 movementDirection = GetMovementDirection();
@@ -106,7 +123,7 @@ public class PlayerBaseState : IState
             playerTransform.rotation = Quaternion.Slerp(playerTransform.rotation, targetRotation, stateMachine.RotationDamping * Time.deltaTime);
         }
     }
-
+    
     private float GetMovementSpeed()
     {
         float speed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;

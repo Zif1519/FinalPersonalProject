@@ -64,7 +64,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Shot"",
+                    ""name"": ""CursorLock"",
                     ""type"": ""Button"",
                     ""id"": ""02b1d4a5-13ad-4277-9bdd-710c4ed1ca43"",
                     ""expectedControlType"": ""Button"",
@@ -225,7 +225,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shot"",
+                    ""action"": ""CursorLock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -276,7 +276,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""01736d64-5b6e-4856-bbdd-f7824666dba2"",
-                    ""path"": ""<Mouse>/rightButton"",
+                    ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -323,7 +323,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
-        m_Player_Shot = m_Player.FindAction("Shot", throwIfNotFound: true);
+        m_Player_CursorLock = m_Player.FindAction("CursorLock", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Throw = m_Player.FindAction("Throw", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
@@ -397,7 +397,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Reload;
-    private readonly InputAction m_Player_Shot;
+    private readonly InputAction m_Player_CursorLock;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Throw;
     private readonly InputAction m_Player_Jump;
@@ -411,7 +411,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
-        public InputAction @Shot => m_Wrapper.m_Player_Shot;
+        public InputAction @CursorLock => m_Wrapper.m_Player_CursorLock;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Throw => m_Wrapper.m_Player_Throw;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
@@ -438,9 +438,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
-            @Shot.started += instance.OnShot;
-            @Shot.performed += instance.OnShot;
-            @Shot.canceled += instance.OnShot;
+            @CursorLock.started += instance.OnCursorLock;
+            @CursorLock.performed += instance.OnCursorLock;
+            @CursorLock.canceled += instance.OnCursorLock;
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
@@ -472,9 +472,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
-            @Shot.started -= instance.OnShot;
-            @Shot.performed -= instance.OnShot;
-            @Shot.canceled -= instance.OnShot;
+            @CursorLock.started -= instance.OnCursorLock;
+            @CursorLock.performed -= instance.OnCursorLock;
+            @CursorLock.canceled -= instance.OnCursorLock;
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
@@ -559,7 +559,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnShot(InputAction.CallbackContext context);
+        void OnCursorLock(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
