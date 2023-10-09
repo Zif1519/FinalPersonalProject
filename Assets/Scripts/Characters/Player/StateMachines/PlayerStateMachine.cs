@@ -13,6 +13,8 @@ public class PlayerStateMachine : StateMachine
 
     public PlayerJumpState JumpState { get; }
     public PlayerLandState LandState { get; }
+
+    public PlayerComboAttackState ComboAttackState { get; }
     
 
 
@@ -22,6 +24,9 @@ public class PlayerStateMachine : StateMachine
     public float MovementSpeedModifier { get; set; } = 1.0f;
 
     public float JumpForce { get; set; }
+
+    public bool IsAttacking { get; set; }
+    public int ComboIndex {  get; set; }
     public Transform MainCameraTransform { get; set; }
 
     public PlayerStateMachine(Player player)
@@ -34,6 +39,8 @@ public class PlayerStateMachine : StateMachine
 
         JumpState = new PlayerJumpState(this);
         LandState = new PlayerLandState(this);
+
+        ComboAttackState = new PlayerComboAttackState(this);
 
         MainCameraTransform = Camera.main.transform;
         MovementSpeed = player.PlayerData.GroundData.BaseSpeed;
