@@ -11,6 +11,10 @@ public class PlayerStateMachine : StateMachine
     public PlayerWalkState WalkState { get; }
     public PlayerRunState RunState { get; }
 
+    public PlayerJumpState JumpState { get; }
+    public PlayerLandState LandState { get; }
+    
+
 
     public Vector2 MovementInput { get; set; }
     public float MovementSpeed { get; private set; }
@@ -23,9 +27,14 @@ public class PlayerStateMachine : StateMachine
     public PlayerStateMachine(Player player)
     {
         Player = player;
+
         IdleState = new PlayerIdleState(this);
         RunState = new PlayerRunState(this);
         WalkState = new PlayerWalkState(this);
+
+        JumpState = new PlayerJumpState(this);
+        LandState = new PlayerLandState(this);
+
         MainCameraTransform = Camera.main.transform;
         MovementSpeed = player.PlayerData.GroundData.BaseSpeed;
         RotationDamping = player.PlayerData.GroundData.BaseRotationDamping;
