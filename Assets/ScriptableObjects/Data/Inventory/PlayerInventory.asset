@@ -12,14 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773c66965a14fd841a4748db000a4e30, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
-  <SlotCount>k__BackingField: 0
   <Items>k__BackingField:
   - <ItemData>k__BackingField: {fileID: 0}
     <Quantity>k__BackingField: 0
-    <ConnectedSlotUI>k__BackingField: {fileID: 0}
-    <IsCleared>k__BackingField: 1
   - <ItemData>k__BackingField: {fileID: 0}
     <Quantity>k__BackingField: 0
-    <ConnectedSlotUI>k__BackingField: {fileID: 0}
-    <IsCleared>k__BackingField: 1
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
   <Type>k__BackingField: 0

@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using static UnityEditor.Progress;
 
 [Serializable]
 public class Inventory : MonoBehaviour
@@ -79,18 +80,28 @@ public class Inventory : MonoBehaviour
     {
         player.Input.PlayerActions.Inventory.started += ToggleUI;
         connected_UI.ConnectInventory(this);
+        InputStartItems(startItem);
     }
     private void OnDestroy()
     {
         player.Input.PlayerActions.Inventory.started -= ToggleUI;
     }
-
+    private void InputStartItems(InventorySO startItemSO)
+    {
+        if (startItemSO == null) return;
+        ItemSlot[] items = startItemSO.Items;
+        for (int i=0; i <items.Length ; i++)
+        {
+            AddItem(items[i].ItemData, items[i].Quantity);
+        }
+    }
     private void ToggleUI(InputAction.CallbackContext context)
     {
         connected_UI.Toggle();
     }
     public void AddItem(ItemData item, int amount)
     {
+        if (item == null) return;
         int remains = amount;
         ItemSlot slot;
         while (remains > 0)
@@ -118,6 +129,7 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveItem(ItemData item, int amount)
     {
+        if (item == null) return;
         int remains = amount;
         ItemSlot slot;
         while (remains > 0)
@@ -134,10 +146,12 @@ public class Inventory : MonoBehaviour
     }
     public void ThrowItem(ItemData item, int amount) 
     {
+        if (item == null) return;
         Debug.Log(item.DisplayName + " 아이템을 " + amount.ToString() + " 개 버렸다.");
     }
     public int CheckCountAddable(ItemData item)
     {
+        if (item == null) return 0;
         int count = 0;
         for ( int i = 0; i < Items.Length; i++ )
         {
@@ -154,6 +168,7 @@ public class Inventory : MonoBehaviour
     }
     public int CheckCountItem(ItemData item)
     {
+        if (item == null) return 0;
         int count = 0;
         for( int i = 0;i < Items.Length;i++ )
         {
@@ -166,6 +181,7 @@ public class Inventory : MonoBehaviour
     }
     public ItemSlot GetItemSlot(ItemData item)
     {
+        if (item == null) return null;
         for (int i=0; i <Items.Length; i++)
         {
             if (Items[i].ItemData == item) return Items[i];
@@ -182,6 +198,7 @@ public class Inventory : MonoBehaviour
     }
     public ItemSlot GetStackableSlot(ItemData item)
     {
+        if (item == null) return null;
         for (int i=0; i < Items.Length; ++i)
         {
             if (Items[i].ItemData == item && item.MaxStackAmount > Items[i].Quantity) return Items[i];

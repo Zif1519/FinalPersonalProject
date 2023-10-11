@@ -9,8 +9,6 @@ public enum InventoryType { Character, Shop, CraftingBox, Chest}
 [Serializable]
 public class InventorySO : ScriptableObject
 {
-    [field: SerializeField] public int SlotCount {  get; private set; }
     [field: SerializeField] public ItemSlot[] Items {  get; private set; }
     [field: SerializeField] public InventoryType Type { get; private set; }
-
 }

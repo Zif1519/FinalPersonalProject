@@ -34,12 +34,13 @@ public class InventoryUI : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-
             gameObject.SetActive(false);
             onCloseInventory?.Invoke();
         }
         else
         {
+            selectedItem = null;
+            Clear_SelectedItemInfo();
             gameObject.SetActive(true);
             onOpenInventory?.Invoke();
         }
@@ -49,7 +50,7 @@ public class InventoryUI : MonoBehaviour
         ItemSlot[] items = inventory.Items;
         for (int i = 0; i < inventory.Items.Length; i++)
         {
-            items_UI[i].ConnectSlot(items[i]);
+            items_UI[i].ConnectSlot(items[i], this);
             items_UI[i].Refresh(items[i]);
         }
     }
@@ -75,9 +76,17 @@ public class InventoryUI : MonoBehaviour
         selectedItemDescription.text = string.Empty;
         selectedItemStatNames.text = string.Empty;
         selectedItemStatValues.text = string.Empty;
+
+        SetButtons_SelectedItemInfo();
     }
     public void Refresh_SelectedItemInfo()
     {
+        if (selectedItem.Quantity == 0)
+        {
+            Clear_SelectedItemInfo();
+            return;
+        }
+
         selectedItemName.text = selectedItem.ItemData.DisplayName;
         selectedItemDescription.text = selectedItem.ItemData.Description;
 
@@ -92,6 +101,7 @@ public class InventoryUI : MonoBehaviour
                 selectedItemStatValues.text += selectedItem.ItemData.Consumables[i].Value.ToString() + "\n";
             }
         }
+        SetButtons_SelectedItemInfo();
     }
     public void SetButtons_SelectedItemInfo()
     {
