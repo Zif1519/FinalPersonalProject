@@ -30,19 +30,22 @@ public class ItemDataConsumable
 public class ItemData : ScriptableObject
 {
     [Header("Info")]
-    public string DisplayName;
-    public string Description;
-    public ItemType Type;
-    public Sprite Icon;
-    public GameObject DropPrefab;
-    public GameObject WeaponPrefab;
-    public GameObject InstallablePrefab;
-    public GameObject SummonPrefab;
+    [field: SerializeField] private string displayName;
+    public string DisplayName => displayName;
+    public string Description { get; private set; }
+    public ItemType Type { get; private set; }
+    public Sprite Icon { get; private set; }
+    public GameObject DropPrefab {  get; private set; }
+    public GameObject WeaponPrefab {  get; private set; }
+    public GameObject InstallablePrefab { get; private set; }
+    public GameObject SummonPrefab { get; private set; }
 
     [Header("Stacking")]
-    public bool IsStackable;
-    public int MaxStackAmount;
+    [field: SerializeField] private bool isStackable;
+    public bool IsStackable => isStackable;
+    public int MaxStackAmount { get; private set; }
 
     [Header("Consumable")]
-    public ItemDataConsumable[] Consumables;
+    [field: SerializeField] private ItemDataConsumable[] consumables;
+    public ItemDataConsumable[] Consumables => consumables;
 }
