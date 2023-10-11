@@ -10,30 +10,40 @@ public class ItemSlot
     [field: SerializeField] public int Quantity { get; private set; }
     [field: SerializeField] public ItemSlotUI ConnectedSlotUI { get; private set; }
     [field: SerializeField] public bool IsCleared { get; private set; }
-
     public ItemSlot()
     {
         ClearSlot();
     }
-    public bool AddItem(ItemData item, int amount)
+    public bool AddItem(ItemData item)
     {
         if (IsCleared)
         {
             ItemData = item;
-            Quantity = amount;
+            Quantity ++;
             IsCleared = false;
             return true;
         }
-        else if (ItemData == item && ItemData.MaxStackAmount >= amount + Quantity)
+        else if (ItemData == item && ItemData.MaxStackAmount > Quantity)
         {
-            Quantity += amount;
+            Quantity ++;
             return true;
         }
         return false;
     }
-    public bool AddItem(ItemData item)
+    public bool RemoveItem(ItemData item)
     {
-        return AddItem(item, 1);
+        if (IsCleared || ItemData == null) { return false; }
+        if (ItemData != item) { return false; }
+        else if (Quantity >= 1) 
+        {
+            Quantity --;
+            if (Quantity == 0)
+            {
+                ClearSlot();
+            }
+            return true;
+        }
+        return false;
     }
     public void ClearSlot()
     {
