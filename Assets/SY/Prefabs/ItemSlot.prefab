@@ -145,7 +145,8 @@ MonoBehaviour:
   m_text: 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
-  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -304,15 +305,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbdd29a8df053d43a4b1c251a0e9e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myindex: 0
-  button: {fileID: 4982242448028799275}
-  icon: {fileID: 8351859001104021578}
-  quantityText: {fileID: 1845843666047242392}
-  curSlot:
-    item: {fileID: 0}
-    isEquipped: 0
-    quantity: 0
-  background: {fileID: 9089499200086923233}
+  iconSprite: {fileID: 0}
+  quantity: {fileID: 0}
+  inventoryUI: {fileID: 0}
+  connectedItemSlot:
+    <ItemData>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
 --- !u!114 &4982242448028799275
 MonoBehaviour:
   m_ObjectHideFlags: 0

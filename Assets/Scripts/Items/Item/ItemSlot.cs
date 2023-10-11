@@ -8,39 +8,40 @@ public class ItemSlot
 {
     [field: SerializeField] public ItemData ItemData { get; private set; }
     [field: SerializeField] public int Quantity { get; private set; }
-    [field: SerializeField] public ItemSlotUI ConnectedSlotUI { get; private set; }
-    [field: SerializeField] public bool IsCleared { get; private set; }
     public ItemSlot()
     {
         ClearSlot();
     }
+    public event Action<ItemSlot> OnItemSlotChanged;
     public bool AddItem(ItemData item)
     {
-        if (IsCleared)
+        if (ItemData == null)
         {
             ItemData = item;
-            Quantity ++;
-            IsCleared = false;
+            Quantity = 1;
+            CallEventOnItemSlotChanged();
             return true;
         }
         else if (ItemData == item && ItemData.MaxStackAmount > Quantity)
         {
             Quantity ++;
+            CallEventOnItemSlotChanged();
             return true;
         }
         return false;
     }
     public bool RemoveItem(ItemData item)
     {
-        if (IsCleared || ItemData == null) { return false; }
-        if (ItemData != item) { return false; }
+        if (ItemData == null) { return false; }
+        else if (ItemData != item) { return false; }
         else if (Quantity >= 1) 
         {
             Quantity --;
             if (Quantity == 0)
             {
-                ClearSlot();
+                ItemData = null;
             }
+            CallEventOnItemSlotChanged();
             return true;
         }
         return false;
@@ -48,8 +49,10 @@ public class ItemSlot
     public void ClearSlot()
     {
         ItemData = null;
-        ConnectedSlotUI = null;
-        IsCleared = true;
         Quantity = 0;
+    }
+    public void CallEventOnItemSlotChanged()
+    {
+        OnItemSlotChanged?.Invoke(this);
     }
 }

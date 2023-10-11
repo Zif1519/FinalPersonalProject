@@ -7,19 +7,40 @@ using UnityEngine.UI;
 
 public class ItemSlotUI : MonoBehaviour
 {
-    public ItemSlotUI(InventoryUI inventoryUI, ItemSlot connectedItemSlot, int slotIndex)
+    public ItemSlotUI(InventoryUI _inventoryUI, ItemSlot _connectedItemSlot)
     {
-        InventoryUI = inventoryUI;
-        ConnectedItemSlot = connectedItemSlot;
-        SlotIndex = slotIndex;
+        inventoryUI = _inventoryUI;
+        connectedItemSlot = _connectedItemSlot;
+    }
+    [Header("Settings")]
+    [SerializeField] Sprite iconSprite;
+    [SerializeField] private TextMeshProUGUI quantity;
+    [Header("Connections")]
+    [SerializeField] private InventoryUI inventoryUI;
+    [SerializeField] private ItemSlot connectedItemSlot;
+
+    public void OnSlotClicked()
+    {
+        inventoryUI.selectedItem = connectedItemSlot;
     }
 
-    [SerializeField] public InventoryUI InventoryUI { get; private set; }
-    [SerializeField] public ItemSlot ConnectedItemSlot { get; private set; }
-    [SerializeField] public int SlotIndex { get; private set; }
-
-
-
-
-
+    public void ConnectSlot(ItemSlot slot)
+    {
+        connectedItemSlot = slot;
+        slot.OnItemSlotChanged += Refresh;
+    }
+    public void DisconnectSlot()
+    {
+        connectedItemSlot.OnItemSlotChanged -= Refresh;
+        connectedItemSlot = null;
+    }
+    public void Refresh(ItemSlot slot)
+    {
+        iconSprite = slot.ItemData.Icon;
+        quantity.text = slot.Quantity.ToString();
+    }
+    public void Refresh()
+    {
+        if(connectedItemSlot != null) Refresh(connectedItemSlot);
+    }
 }

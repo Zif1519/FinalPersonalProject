@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         player.Input.PlayerActions.Inventory.started += ToggleUI;
-        connected_UI.Connect(this);
+        connected_UI.ConnectInventory(this);
     }
     private void OnDestroy()
     {
@@ -141,13 +141,13 @@ public class Inventory : MonoBehaviour
         int count = 0;
         for ( int i = 0; i < Items.Length; i++ )
         {
-            if (Items[i].ItemData == item)
+            if (Items[i].ItemData == null)
+            {
+                count += item.MaxStackAmount;
+            }
+            else if (Items[i].ItemData == item)
             {
                 count += item.MaxStackAmount - Items[i].Quantity;
-            }
-            if (Items[i].IsCleared)
-            {
-                count += item.MaxStackAmount; 
             }
         }
         return count;
