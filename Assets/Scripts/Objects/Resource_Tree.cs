@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Resource_Tree : MonoBehaviour
 {
-    public ItemData dropItem;
+    public ItemSO dropItem;
     [SerializeField] private int dropNumber;
     
     private int _destroyCount;

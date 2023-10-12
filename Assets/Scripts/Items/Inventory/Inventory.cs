@@ -99,7 +99,7 @@ public class Inventory : MonoBehaviour
     {
         connected_UI.Toggle();
     }
-    public void AddItem(ItemData item, int amount)
+    public void AddItem(ItemSO item, int amount)
     {
         if (item == null) return;
         int remains = amount;
@@ -127,7 +127,7 @@ public class Inventory : MonoBehaviour
         }
         ThrowItem(item, remains);
     }
-    public void RemoveItem(ItemData item, int amount)
+    public void RemoveItem(ItemSO item, int amount)
     {
         if (item == null) return;
         int remains = amount;
@@ -144,12 +144,12 @@ public class Inventory : MonoBehaviour
             break;
         }
     }
-    public void ThrowItem(ItemData item, int amount) 
+    public void ThrowItem(ItemSO item, int amount) 
     {
         if (item == null) return;
         Debug.Log(item.DisplayName + " 아이템을 " + amount.ToString() + " 개 버렸다.");
     }
-    public int CheckCountAddable(ItemData item)
+    public int CheckCountAddable(ItemSO item)
     {
         if (item == null) return 0;
         int count = 0;
@@ -166,7 +166,7 @@ public class Inventory : MonoBehaviour
         }
         return count;
     }
-    public int CheckCountItem(ItemData item)
+    public int CheckCountItem(ItemSO item)
     {
         if (item == null) return 0;
         int count = 0;
@@ -179,7 +179,7 @@ public class Inventory : MonoBehaviour
         }
         return count;
     }
-    public ItemSlot GetItemSlot(ItemData item)
+    public ItemSlot GetItemSlot(ItemSO item)
     {
         if (item == null) return null;
         for (int i=0; i <Items.Length; i++)
@@ -196,7 +196,7 @@ public class Inventory : MonoBehaviour
         }
         return null;
     }
-    public ItemSlot GetStackableSlot(ItemData item)
+    public ItemSlot GetStackableSlot(ItemSO item)
     {
         if (item == null) return null;
         for (int i=0; i < Items.Length; ++i)

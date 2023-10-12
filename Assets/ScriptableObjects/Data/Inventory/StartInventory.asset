@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: StartInventory
   m_EditorClassIdentifier: 
   <Items>k__BackingField:
-  - <ItemData>k__BackingField: {fileID: 0}
-    <Quantity>k__BackingField: 0
-  - <ItemData>k__BackingField: {fileID: 0}
-    <Quantity>k__BackingField: 0
-  - <ItemData>k__BackingField: {fileID: 0}
-    <Quantity>k__BackingField: 0
+  - <ItemData>k__BackingField: {fileID: 11400000, guid: 1493eef25df6d3a4fa2dbbe728b4dea9,
+      type: 2}
+    <Quantity>k__BackingField: 1
   <Type>k__BackingField: 0

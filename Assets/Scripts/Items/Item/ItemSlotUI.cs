@@ -16,7 +16,7 @@ public class ItemSlotUI : MonoBehaviour
 
     public void OnSlotClicked()
     {
-        inventoryUI.selectedItem = connectedItemSlot;
+        inventoryUI.SelectItem(connectedItemSlot);
     }
 
     public void ConnectSlot(ItemSlot slot, InventoryUI inventory)

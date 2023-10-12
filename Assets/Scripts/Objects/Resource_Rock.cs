@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Resource_Rock : MonoBehaviour
 {
-    public ItemData dropItem;
+    public ItemSO dropItem;
     
     private int _destroyCount;
     private MeshCollider _collider;

@@ -47,6 +47,7 @@ public class InventoryUI : MonoBehaviour
     }
     public void ConnectInventory(Inventory inventory)
     {
+        connectedInventory = inventory;
         ItemSlot[] items = inventory.Items;
         for (int i = 0; i < inventory.Items.Length; i++)
         {
@@ -173,6 +174,6 @@ public class InventoryUI : MonoBehaviour
     public void OnDropButton()
     {
         selectedItem.RemoveItem(selectedItem.ItemData);
-        connectedInventory.ThrowItem(selectedItem.ItemData,1);
+        connectedInventory.ThrowItem(selectedItem.ItemData, 2);
     }
 }

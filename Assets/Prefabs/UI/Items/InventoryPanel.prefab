@@ -74,7 +74,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb522264d40556a45823b3cc82990b3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7daa6f701d9c1114f896fdaa1242dcb8, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -205,8 +205,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: USE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -340,8 +341,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -475,7 +477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ba051e2ea09cae48a0bf1abb536d61d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a12278e2f4f4c4bbc0510a487b4641, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -529,8 +531,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 9047986484748897209}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
         m_MethodName: OnUseButton
         m_Mode: 1
         m_Arguments:
@@ -617,8 +619,9 @@ MonoBehaviour:
 
     lkdjflkdjflkjdf'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -754,7 +757,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9bf97660170dfcd4ba829c3c75aad29b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15f4221b731f87a478d10624cc7b6954, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -832,7 +835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ba051e2ea09cae48a0bf1abb536d61d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a12278e2f4f4c4bbc0510a487b4641, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -966,8 +969,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: EQUIP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1101,7 +1105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ba051e2ea09cae48a0bf1abb536d61d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a12278e2f4f4c4bbc0510a487b4641, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1235,7 +1239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ba051e2ea09cae48a0bf1abb536d61d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a12278e2f4f4c4bbc0510a487b4641, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1451,7 +1455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ba051e2ea09cae48a0bf1abb536d61d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6a12278e2f4f4c4bbc0510a487b4641, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1505,8 +1509,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+      - m_Target: {fileID: 9047986484748897209}
+        m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
         m_MethodName: OnDropButton
         m_Mode: 1
         m_Arguments:
@@ -1593,8 +1597,9 @@ MonoBehaviour:
 
     lkdjflkdjflkjdf'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1728,8 +1733,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Apple
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1863,8 +1869,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: USE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1998,8 +2005,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: UNEQUIP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2133,8 +2141,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: DROP
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 67b79270b5b954b3b9909b4466182b9d, type: 2}
+  m_sharedMaterial: {fileID: 644978224753050539, guid: 67b79270b5b954b3b9909b4466182b9d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -6,14 +6,14 @@ using UnityEngine;
 [Serializable]
 public class ItemSlot
 {
-    [field: SerializeField] public ItemData ItemData { get; private set; }
+    [field: SerializeField] public ItemSO ItemData { get; private set; }
     [field: SerializeField] public int Quantity { get; private set; }
     public ItemSlot()
     {
         ClearSlot();
     }
     public event Action<ItemSlot> OnItemSlotChanged;
-    public bool AddItem(ItemData item)
+    public bool AddItem(ItemSO item)
     {
         if (ItemData == null)
         {
@@ -30,7 +30,7 @@ public class ItemSlot
         }
         return false;
     }
-    public bool RemoveItem(ItemData item)
+    public bool RemoveItem(ItemSO item)
     {
         if (ItemData == null) { return false; }
         else if (ItemData != item) { return false; }
