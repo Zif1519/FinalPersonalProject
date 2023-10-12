@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd8420899fc8944087d8b89f5493c42, type: 3}
+  m_Name: BugInventory
+  m_EditorClassIdentifier: 
+  displayName: "\uBC84\uADF8\uC778\uBCA4\uD1A0\uB9AC"
+  description: "\uC778\uBCA4\uC5D0 \uC65C \uC774\uAC8C \uB4E4\uC5B4\uC788\uC9C0??"
+  type: 2
+  icon: {fileID: 21300000, guid: 671d3c66ccc81cf4b857b5fc807bf277, type: 3}
+  dropPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  installPrefab: {fileID: 0}
+  summonPrefab: {fileID: 0}
+  isStackable: 0
+  maxStackAmount: 1
+  consumables: []
